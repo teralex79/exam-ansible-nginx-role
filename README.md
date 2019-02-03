@@ -27,7 +27,7 @@ Example Playbook
 ----------------
 
 ```yaml
-- hosts: servers
+- hosts: nginx 
   roles:
     - { role: nginx }
 ```
