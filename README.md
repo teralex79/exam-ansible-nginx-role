@@ -17,9 +17,11 @@ Dependencies
 
 Uses role docker from git@github.com:teralex79/exam-ansible-docker-role.git
 
+```yaml
 - name: Run role Install Docker
   include_role:
     name: docker
+```
 
 Example Playbook
 ----------------
