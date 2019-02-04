@@ -1,2 +1,13 @@
 ---
 # handlers file for roles/nginx
+- name: restart nginx docker
+  docker_container:
+    name: "{{ docker_name }}"
+    hostname: "{{ docker_name }}"
+    ports:
+      "{{ docker_nginx_port }}:80"
+    volumes:
+      "{{ docker_volume }}:/etc/nginx/"
+    image: nginx:alpine
+    state: started
+    restart: yes

@@ -11,18 +11,20 @@
 
 - name: Create nginx config volume.
   docker_volume:
-    name: nginx_config
+    name: "{{ docker_vol }}" 
 
 - name: Create nginx container.
   docker_container:
     name: "{{ docker_name }}"
     hostname: "{{ docker_name }}"
     ports:
-      5000:80
+      "{{ docker_nginx_port }}:80"
     volumes:
-      nginx_config:/etc/nginx/
+      "{{ docker_vol }}:/etc/nginx/"
     image: nginx:alpine
     state: present
+
+- include: config.yml
 
 - name: Run nginx container.
   docker_container:

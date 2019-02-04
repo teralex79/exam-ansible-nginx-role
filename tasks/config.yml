@@ -1,0 +1,9 @@
+---
+- name: config | Configuring NGNIX Load Balancer
+  template:
+    src: nginx.conf.j2
+    dest: "/var/lib/docker/volumes/{{ docker_vol }}/_data/nginx.conf"
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+  notify: restart nginx docker
