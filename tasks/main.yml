@@ -9,3 +9,22 @@
   docker_image:
     name: nginx:alpine
 
+- name: Create nginx config volume.
+  docker_volume:
+    name: nginx_config
+
+- name: Create nginx container.
+  docker_container:
+    name: "{{ docker_name }}"
+    hostname: "{{ docker_name }}"
+    ports:
+      5000:80
+    volumes:
+      nginx_config:/etc/nginx/
+    image: nginx:alpine
+    state: present
+
+- name: Run nginx container.
+  docker_container:
+    name: "{{ docker_name }}"
+    state: started
