@@ -1,2 +1,11 @@
 ---
 # tasks file for roles/nginx
+
+- name: Run role Install Docker.
+  include_role:
+    name: docker
+
+- name: Pull an nginx image.
+  docker_image:
+    name: nginx:alpine
+
