@@ -11,7 +11,7 @@
 
 - name: Create nginx config volume.
   docker_volume:
-    name: "{{ docker_vol }}" 
+    name: "{{ docker_vol }}"
 
 - name: Create nginx container.
   docker_container:
