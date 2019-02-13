@@ -26,7 +26,7 @@
 
 - include: config.yml
 
-- name: Run nginx container.
+- name: Start/restart nginx container.
   docker_container:
     name: "{{ docker_name }}"
     state: started
