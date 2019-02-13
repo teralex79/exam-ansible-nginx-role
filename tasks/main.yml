@@ -30,3 +30,4 @@
   docker_container:
     name: "{{ docker_name }}"
     state: started
+    restart: yes
