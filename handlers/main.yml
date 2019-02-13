@@ -11,5 +11,5 @@
 #    image: nginx:alpine
     state: started
     restart: yes
-- pause:
+  pause:
     seconds: 20
