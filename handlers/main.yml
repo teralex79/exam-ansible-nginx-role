@@ -12,4 +12,5 @@
     state: started
     restart: yes
 - pause:
+    prompt: "Waiting 20 seconds for restarting nginx docker container"
     seconds: 20
